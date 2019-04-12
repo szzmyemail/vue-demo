@@ -107,6 +107,11 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String
+  },
+  watch: {
+    msg(newval,oldval){
+      console.log(newval);
+    }
   }
 };
 </script>
