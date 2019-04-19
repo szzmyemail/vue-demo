@@ -36,17 +36,6 @@
           console.log(response);
         });
       },
-      getDashboardTwoHalf(){
-        this.axios({
-          method: 'get',
-          url:'http://10.29.42.161:8080/chart/dashboard',
-          data: {
-            chartIds: '10004,10017,10018,10021,10037,10039,10043,6,10001,10040'
-          }
-        }).then(response => {
-          console.log(response);
-        });
-      },
       getDashboardThree(){
         this.axios({
           method: 'get',
@@ -72,7 +61,7 @@
           console.log(response);
         });
       },
-      updateDashboardZero(){
+      updateDashboardOne(){
         this.axios.post('http://10.29.42.161:8080/chart/dashboard',{
           data: {
             chartIds: "10002,10003,10018,10006",
@@ -86,7 +75,21 @@
           console.log(response);
         });
       },
-      updateDashboardOne(){
+      updateDashboardOneHalf(){
+        this.axios.post('http://10.29.42.161:8080/chart/dashboard',{
+          params: {
+            chartIds: "10002,10003,10018,10006",
+            dashboardName: "OS1",
+            description: null,
+            id: 10101,
+            layout: "layout4_2_2",
+            modifier: "lilysong@cisco.com"
+          }
+        }).then(response => {
+          console.log(response);
+        });
+      },
+      updateDashboardTwo(){
         this.axios({
           method: 'post',
           url: 'http://10.29.42.161:8080/chart/dashboard',
@@ -102,7 +105,7 @@
           console.log(response);
         });
       },
-      updateDashboardTwo(){
+      updateDashboardThree(){
         this.axios({
           method: 'post',
           url: 'http://10.29.42.161:8080/chart/dashboard',
@@ -126,12 +129,12 @@
       //this.getDashboard();
       //this.getDashboardOne();
       //this.getDashboardTwo();
-      //this.getDashboardTwoHalf();
       //this.getDashboardThree();
       //this.updateDashboard();
-      //this.updateDashboardZero();
       //this.updateDashboardOne();
+      //this.updateDashboardOneHalf();
       this.updateDashboardTwo();
+      //this.updateDashboardThree();
     }
   }
 </script>
